@@ -15,7 +15,7 @@ import { Color } from "three";
 import { degToRad, lerp } from "three/src/math/MathUtils";
 import { Camping } from "./Camping";
 import * as THREE from "three";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Scroll, ScrollControls, Html } from "@react-three/drei";
 import { Interface } from "./interface";
 import { ScrollManager } from "./ScrollMAnager";
@@ -24,8 +24,7 @@ import { Menu } from "./Menue";
 import { cloneUniformsGroups, DoubleSide } from "three";
 import { Reflector, useTexture, useGLTF } from "@react-three/drei";
 import Nav from "./Nav";
-import { useInView } from "framer-motion";
-
+import { motion } from "framer-motion-3d";
 
 
 
@@ -42,7 +41,11 @@ export const Experience = () => {
     setSideanimte(1);
   }
   return (
-    <>
+    <motion.group
+    transition={{
+      duration:1,
+    }}
+    >
       {(sideanimate===0)?<Intro/>:<SideIntro/>}
       {(sideanimate===0)?<Float floatIntensity={1} speed={1.5}>
       <City/>
@@ -64,7 +67,7 @@ export const Experience = () => {
             </Scroll>}
             
           </ScrollControls>
-    </>
+    </motion.group>
   );
 };
 
@@ -104,7 +107,7 @@ function Intro() {
   return useFrame((state) => {
     state.camera.position.lerp(
       vec.set(0,5,15),//state.mouse.x * 5, 3 + state.mouse.y * 2, 14
-      0.05
+      1
     );
     state.camera.lookAt(0, 0, 0);
   });

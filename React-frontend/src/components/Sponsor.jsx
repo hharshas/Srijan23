@@ -5,7 +5,7 @@ function Sponsor() {
   return (
     <div className='max-w-screen p-5 md:p-10 bg-gray-800'>
       <h1 className='flex text-white font-bold text-6xl justify-center items-center'> Past Sponsors</h1>
-        <div className='grid grid-cols-4 flex-wrap gap-x-5 gap-y-10 p-10 rounded-lg backdrop-blur-lg bg-opacity-60'>
+        <div className='grid md:grid-cols-4 grid-cols-2 flex-wrap gap-x-5 gap-y-10 p-10 rounded-lg backdrop-blur-lg bg-opacity-60'>
             <motion.div initial={{ y: 20 }}
             whileInView={{ y: 0 }} transition={{duration:1}} className='col-span-4 flex justify-center items-center backdrop-blur-lg bg-opacity-60 rounded-lg p-5 bg-no-repeat bg-contain bg-center'>
               <img className='rounded' src="https://res.cloudinary.com/dfr1kvie3/image/upload/v1702995309/central_coalfields_dji3gq.jpg" alt="" />
