@@ -5,9 +5,9 @@ function Sponsor() {
   return (
     <div className='max-w-screen p-5 md:p-10 bg-gray-800'>
       <h1 className='flex text-white font-bold text-6xl justify-center items-center'> Past Sponsors</h1>
-        <div className='grid grid-cols-4 flex-wrap gap-x-5 gap-y-10 p-10 rounded-lg backdrop-blur-lg bg-opacity-60'>
+        <div className='grid grid-cols-2 md:grid-cols-4 flex-wrap gap-x-5 gap-y-10 p-10 rounded-lg backdrop-blur-lg bg-opacity-60'>
             <motion.div initial={{ y: 20 }}
-            whileInView={{ y: 0 }} transition={{duration:1}} className='col-span-4 flex justify-center items-center backdrop-blur-lg bg-opacity-60 rounded-lg p-5 bg-no-repeat bg-contain bg-center'>
+            whileInView={{ y: 0 }} transition={{duration:1}} className='col-span-full flex justify-center items-center backdrop-blur-lg bg-opacity-60 rounded-lg p-5 bg-no-repeat bg-contain bg-center'>
               <img className='rounded' src="https://res.cloudinary.com/dfr1kvie3/image/upload/v1702995309/central_coalfields_dji3gq.jpg" alt="" />
             </motion.div>
             <motion.div initial={{ x: -30 }}
@@ -34,6 +34,7 @@ function Sponsor() {
             whileInView={{ y: 0 }} transition={{duration:1.1}} className='col-span-1 flex justify-center items-center bg-[url("")] backdrop-blur-lg bg-opacity-60 rounded-lg p-5 bg-no-repeat bg-auto bg-center'>
             <img className='rounded' src="" alt="" />
             </motion.div>
+            {/* The above div is for ncl logo */}
             <motion.div initial={{ x: 30 }}
             whileInView={{ x: 0 }} transition={{duration:1.8}} className='col-span-1 flex justify-center items-center bg-[url("")] backdrop-blur-lg bg-opacity-60 rounded-lg p-5 bg-no-repeat bg-contain bg-center'>
             <img className='rounded' src="https://res.cloudinary.com/dfr1kvie3/image/upload/v1702995309/essar_oil_xok7pz.png" alt="" />
@@ -75,18 +76,15 @@ function Sponsor() {
             <img className='rounded' src="https://res.cloudinary.com/dfr1kvie3/image/upload/v1703006562/coal_capital_jf6juf.png" alt="" />
             </div>
             <div className='col-span-1 flex justify-center items-center bg-[url("")] backdrop-blur-lg bg-opacity-60 rounded-lg p-5 bg-no-repeat bg-auto bg-center'>
-            <img className='rounded' src="" alt="" />
+            <img className='rounded' src="https://res.cloudinary.com/dfr1kvie3/image/upload/v1702995309/eng_parcel_zdfb7v.png" alt="" />
             </div>
+            {/* The above div is for Bahamas(food) logo */}
             <div className='col-span-1 flex justify-center items-center bg-[url("")] backdrop-blur-lg bg-opacity-60 rounded-lg p-5 bg-no-repeat bg-contain bg-center'>
             <img className='rounded' src="https://res.cloudinary.com/dfr1kvie3/image/upload/v1702995309/eng_parcel_zdfb7v.png" alt="" />
             </div>
             <div className='col-span-1 flex justify-center items-center bg-[url("")] backdrop-blur-lg bg-opacity-60 rounded-lg p-5 bg-no-repeat bg-contain bg-center'>
             <img className='rounded' src="https://res.cloudinary.com/dfr1kvie3/image/upload/v1702995311/realme_cgy4n5.png" alt="" />
             </div>
-            <div className='col-span-1 flex justify-center items-center bg-[url("")] backdrop-blur-lg bg-opacity-60 rounded-lg p-5 bg-no-repeat bg-auto bg-center'>
-            <img className='rounded' src="" alt="" />
-            </div>
-            <div className='col-span-1 flex justify-center items-center bg-[url("")] backdrop-blur-lg bg-opacity-60 rounded-lg p-5 bg-no-repeat bg-auto bg-center'><img className='rounded' src="" alt="" /></div>
         </div>
     </div>
   )
