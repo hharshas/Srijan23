@@ -1,18 +1,21 @@
 import { Canvas } from "@react-three/fiber";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { Experience } from "./components/Experience";
-
+import { LoadingScreen } from "./components/LoadingScreen";
 
 
 function App() {
+  const [started, onStarted] = useState(false);
+  const isMobile = window.innerWidth < 768;
   return (
     <>
-      <Canvas shadows camera={{ position: [0, 0, 8], fov: 42 }}>
+    <LoadingScreen started={started} setStarted={onStarted} />
+      <Canvas shadows camera={{ position: [0, 0, 300], fov: isMobile?62:42}}>
         <color attach="background" args={["#171720"]} />
         <fog attach="fog" args={["#171720", 10, 30]} />
         <Suspense>
-          <Experience />
+          {started && (<Experience />)}
         </Suspense>
         <EffectComposer>
           <Bloom mipmapBlur intensity={1.2} />
